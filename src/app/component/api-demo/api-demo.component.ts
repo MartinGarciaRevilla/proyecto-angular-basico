@@ -8,14 +8,7 @@ import { ApiService } from '../../services/api.service';
   standalone: true,
   imports: [CommonModule],
   styleUrl: './api-demo.component.css',
-  template:
-   `
-    <h2>Lista de Usuarios</h2>
-    <button (click)="loadUsers()">Cargar Usuarios</button>
-    <ul>
-      <li *ngFor="let user of users">{{ user.name }} - {{ user.email }}</li>
-    </ul>
-  `
+  templateUrl: './api-demo.component.html'
 })
 export class ApiDemoComponent implements OnInit {
   users: any[] = [];

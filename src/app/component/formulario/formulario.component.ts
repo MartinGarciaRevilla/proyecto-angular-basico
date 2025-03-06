@@ -7,25 +7,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
   selector: 'app-formulario',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule],
-  template: 
-  `
-  <h2>Formulario Reactivo</h2>
-  <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
-    <label>Nombre:</label>
-    <input formControlName="nombre" />
-    <div *ngIf="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched">
-      <small>El nombre es obligatorio y debe tener al menos 3 caracteres.</small>
-    </div>
-
-    <label>Email:</label>
-    <input formControlName="email" type="email" />
-    <div *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">
-      <small>Introduce un email válido.</small>
-    </div>
-
-    <button type="submit" [disabled]="formulario.invalid">Enviar</button>
-  </form>
-`,
+  templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css',
 })
 export class FormularioComponent {
